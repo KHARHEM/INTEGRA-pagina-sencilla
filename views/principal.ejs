@@ -1,0 +1,70 @@
+import React from 'react';
+import { SERVICES, REVIEWS, MAP_EMBED_URL } from '../constants';
+import { Page } from '../types';
+
+interface HomeProps {
+  onNavigate: (page: Page) => void;
+}
+
+const Home: React.FC<HomeProps> = ({ onNavigate }) => {
+  return (
+    <div className="animate-fade-in">
+      {/* Hero Section */}
+      <section className="relative h-[600px] flex items-center overflow-hidden">
+        <div className="absolute inset-0 bg-black/40 z-10"></div>
+        <img 
+          src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&q=80&w=2000" 
+          alt="Gym Interior" 
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        <div className="relative z-20 max-w-7xl mx-auto px-4 text-white w-full">
+          <h1 className="text-5xl md:text-7xl font-bold mb-6">
+            Entrenamiento <br />
+            <span className="text-integra">Personal</span>
+          </h1>
+          <p className="text-xl md:text-2xl mb-8 max-w-2xl font-light">
+            En nuestro centro, ofrecemos entrenamientos personales diseñados específicamente para tus necesidades y objetivos.
+          </p>
+          <button 
+            onClick={() => onNavigate(Page.SERVICES)}
+            className="bg-integra hover:bg-integra-dark text-white font-bold py-3 px-8 rounded-full transition-all transform hover:scale-105 shadow-lg"
+          >
+            VER MÁS
+          </button>
+        </div>
+      </section>
+
+      {/* About Brief */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 text-center">
+          <h2 className="text-3xl font-bold text-black mb-12 uppercase tracking-wide">
+            Conócenos
+          </h2>
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="text-left space-y-6">
+              <h3 className="text-2xl font-bold text-integra">El estilo de vida que quieres</h3>
+              <p className="text-gray-600 leading-relaxed">
+                Nuestros entrenadores altamente calificados realizarán una valoración inicial para trabajar contigo de manera individualizada, creando un plan de entrenamiento personalizado que se adapte a tu nivel.
+              </p>
+              <button 
+                onClick={() => onNavigate(Page.ABOUT)}
+                className="text-integra font-bold border-b-2 border-integra pb-1 hover:text-integra-dark transition-colors"
+              >
+                Leer más sobre el equipo
+                <%- include('templates/head') %>
+
+                <main class="container">
+                  <section class="hero">
+                    <h1>Entrenamiento Personal</h1>
+                    <p>En nuestro centro, ofrecemos entrenamientos personales diseñados específicamente para tus necesidades y objetivos.</p>
+                    <p><a href="/servicios">Ver servicios</a></p>
+                  </section>
+
+                  <section>
+                    <h2>Conócenos</h2>
+                    <p>Nuestros entrenadores altamente calificados realizarán una valoración inicial para trabajar contigo de manera individualizada.</p>
+                  </section>
+
+                </main>
+
+                <%- include('templates/footer') %>
