@@ -12,3 +12,7 @@ conceptos básicos de desarrollo web con Node.js y Express.
 
 ## Estado del proyecto
 Deploy funcional y accesible online.
+
+## Demo
+🌐 https://www.centreintegra.cat/
+Proyecto desarrollado como práctica profesional.
